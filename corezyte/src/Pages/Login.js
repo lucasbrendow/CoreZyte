@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css"; // Certifique-se de criar e ajustar o arquivo de estilização
-import rocketImage from "./Images/rocket.png";
-import coreZiteLogo from "./Images/CoreZiteLogoText.png";
+import "./Login.css"; // Certifique-se de criar e ajustar o arquivo de estilizaï¿½ï¿½o
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -11,17 +9,32 @@ const Login = () => {
         e.preventDefault();
         console.log("Email:", email);
         console.log("Password:", password);
-        // Aqui você pode implementar a lógica de autenticação
+        // Aqui vocï¿½ pode implementar a lï¿½gica de autenticaï¿½ï¿½o
     };
 
     return (
         <div className="login-container">
+
             <div className="login-left">
-                <img src={rocketImage} alt="Rocket" className="rocket-image" />
+                <img
+                    src="./Images/rocket.png" // Substitua pelo caminho da imagem do foguete
+                    alt="rocket"
+                    className="rocket-image"
+                />
             </div>
+
             <div className="login-right">
+
+                <div className="logo">
+                        <img
+                            src="./Images/CoreZiteLogoText.png" // Substitua pelo caminho do logo CoreZite
+                            alt="CoreZite Logo"
+                        />
+               </div>
+
+
                 <div className="login-box">
-                    <img src={coreZiteLogo} alt="CoreZite Logo" className="logo" />
+
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email:</label>
                         <input
@@ -45,13 +58,15 @@ const Login = () => {
                             Login
                         </button>
                     </form>
+
                     <a href="/forgot-password" className="forgot-password">
                         Forgot the password?
                     </a>
                 </div>
             </div>
+
             <footer className="footer">
-                <p>© 2025 CoreZite  01.01</p>
+                <p>ï¿½ 2025 CoreZite 01.02</p>
             </footer>
         </div>
     );
