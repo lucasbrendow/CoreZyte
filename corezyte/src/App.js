@@ -1,60 +1,42 @@
-import React, { useState } from "react";
-import "./Login.css"; // Certifique-se de criar e ajustar o arquivo de estilização
-import rocketImage from "./Images/rocket.png";
-import coreZiteLogo from "./Images/CoreZiteLogoText.png";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+// PÃ¡ginas
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import ForgotPassword from "./Pages/ForgotPassword";
+import Dashboard from "./Pages/Dashboard";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Email:", email);
-        console.log("Password:", password);
-        // Aqui você pode implementar a lógica de autenticação
-    };
-
-    return (
-        <div className="login-container">
-            <div className="login-left">
-                <img src={rocketImage} alt="Rocket" className="rocket-image" />
-            </div>
-            <div className="login-right">
-                <div className="login-box">
-                    <img src={coreZiteLogo} alt="CoreZite Logo" className="logo" />
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="Enter your email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <label htmlFor="password">Password:</label>
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Enter your password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                        <button type="submit" className="login-button">
-                            Login
-                        </button>
-                    </form>
-                    <a href="/forgot-password" className="forgot-password">
-                        Forgot the password?
-                    </a>
-                </div>
-            </div>
-            <footer className="footer">
-                <p>© 2025 CoreZite  01.01</p>
-            </footer>
-        </div>
-    );
+// ProteÃ§Ã£o de rota
+const PrivateRoute = ({ children }) => {
+    const user = sessionStorage.getItem("user");
+    return user ? children : <Navigate to="/" />;
 };
 
-export default Login;
+function App() {
+    return (
+        <Router>
+            <Routes>
+                {/* Abertas */}
+                <Route path="/" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+
+                {/* Protegidas */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <PrivateRoute>
+                            <Dashboard />
+                        </PrivateRoute>
+                    }
+                />
+
+                {/* Rota fallback (opcional) */}
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </Router>
+    );
+}
+
+export default App;

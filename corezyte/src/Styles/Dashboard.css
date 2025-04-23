@@ -1,0 +1,220 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: relative;
+    width: 240px;
+    background: linear-gradient(180deg, #1a043a 0%, #2c0e5e 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 100vh;
+    border-right: 3px solid #3a0ca3;
+}
+
+.logo-dashboard {
+    width: 160px;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.avatar-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: #ccc;
+    margin: 0 auto 10px auto;
+}
+
+.user-level,
+.user-xp,
+.user-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 2px 0;
+}
+
+.planet-box {
+    background: #3b0b7a;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.planet-preview {
+    width: 40%;
+    max-width: 140px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.user-info {
+    background: #15032b;
+    border: 2px solid #00bfff;
+    border-radius: 12px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.lessons button {
+    background: #7c3aed;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.lessons button:hover {
+    background: #9f42f5;
+}
+
+.logout-button {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px;
+    background: #e11d48;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #be123c;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-screen {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.space-background {
+    flex: 1;
+    background: url('../Images/starsbackground.png'), linear-gradient(to bottom, #000010, #00001a);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.planet-system {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.planet-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+    width: 120px;
+}
+
+.planet-row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.planet-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.planet-label {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sun-image {
+    width: 550px;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    animation: pulse 2s infinite;
+}
+
+.version {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+

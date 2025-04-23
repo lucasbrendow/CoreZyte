@@ -1,0 +1,146 @@
+.login-container {
+    display: flex;
+    height: 100vh;
+    background-color: #000000;
+    background-image: url('../Images/starsbackground.png');
+    position: relative;
+    overflow: hidden;
+}
+
+.comet-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.comet {
+    position: absolute;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-150px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+.login-left {
+    flex: 1;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.rocket-image {
+    max-width: 80%;
+    animation: float 3s infinite ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+.login-right {
+    flex: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(141,20,211,0.5) 7%, rgba(141,20,211,0.02) 49%, rgba(141,20,211,0.5) 83%);
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.login-box {
+    width: 40%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 100px;
+    max-width: 500px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.login-button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #5a00a3;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #7d00d1;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #fff;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    background-color: #5a00a3;
+    color: #fff;
+    font-size: 12px;
+    z-index: 3;
+}
+
+.register-button {
+    margin-top: 10px;
+    width: 50%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #ffffffaa;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #ffffff22;
+}
