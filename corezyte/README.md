@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# CoreZite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**CoreZite** é uma plataforma educacional desenvolvida como Trabalho de Conclusão de Curso (TCC) de uma pós-graduação em Desenvolvimento Full Stack. O sistema tem como objetivo ensinar programação básica para iniciantes, utilizando uma abordagem gamificada e visualmente envolvente, com temática inspirada no espaço sideral.
 
-## Available Scripts
+## Objetivo
 
-In the project directory, you can run:
+Oferecer um ambiente interativo e motivador para iniciantes aprenderem lógica de programação e conceitos básicos de C#. O projeto busca simplificar o aprendizado, tornando-o acessível, lúdico e eficiente por meio de recursos visuais, quizzes, exercícios práticos e um sistema de níveis.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Cadastro e login de usuários
+- Módulos organizados por planetas temáticos
+- Aulas teóricas com linguagem simples e acessível
+- Questionários de múltipla escolha
+- Interface gamificada com visual espacial
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias Utilizadas
 
-### `npm test`
+### Frontend
+- React.js
+- PrimeReact
+- Axios
+- Vercel (deploy)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- ASP.NET Core Web API (C#)
+- Entity Framework Core
+- SQL Server
+- Railway ou Azure (deploy gratuito para testes)
 
-### `npm run build`
+## Estrutura do Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+/corezite-frontend
+  ├── public/
+  ├── src/
+  │   ├── components/
+  │   ├── pages/
+  │   ├── services/
+  │   └── styles/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+/corezite-backend
+  ├── Controllers/
+  ├── Models/
+  ├── Data/
+  ├── Services/
+  └── Program.cs
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Como Executar Localmente
 
-### `npm run eject`
+### Pré-requisitos
+- Node.js e npm
+- .NET 6 SDK
+- SQL Server (local ou em nuvem)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Passos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/corezite.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Instale as dependências do frontend:
+```bash
+cd corezite-frontend
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Rode o frontend:
+```bash
+npm run dev
+```
 
-## Learn More
+4. No backend:
+```bash
+cd ../corezite-backend
+dotnet restore
+dotnet ef database update
+dotnet run
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Acesse a aplicação em: `http://localhost:3000`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Documentação Técnica
 
-### Code Splitting
+A documentação completa do projeto pode ser encontrada no próprio repositório e no TCC que acompanha esta aplicação. Ela inclui:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Justificativa da proposta
+- Arquitetura de software
+- Diagrama de banco de dados
+- Estratégias de testes e validação
+- Considerações finais
 
-### Analyzing the Bundle Size
+## Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Lucas Brendow**  
+Desenvolvedor Full Stack • Apaixonado por ensino e tecnologia  
+l.brendow@outlook.com
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
